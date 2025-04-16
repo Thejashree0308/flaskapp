@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Performance Predictor</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #f4b400;
+        }
+        h2 {
+            text-align: center;
+            color: #0ea5e9;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Student Details</h1>
+        <form action="/predict" method="post">
+            <div class="form-container">
+                Hours Studied: <input type="text" name="hours" placeholder="Enter hours studied"><br>
+                Previous Scores: <input type="text" name="previous_scores" placeholder="Enter previous scores"><br>
+                Extracurricular Activities (Yes/No): <input type="text" name="extracurricular_activities" placeholder="Yes or No"><br>
+                Sleep Hours: <input type="text" name="sleep" placeholder="Enter sleep hours"><br>
+                Sample Question Papers Practiced: <input type="text" name="sample_question_papers" placeholder="Enter no. of papers"><br>
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
