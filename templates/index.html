@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Student Performance Predictor</title>
     <style>
         body {
@@ -66,15 +66,27 @@
         <h1>Enter Student Details</h1>
         <form action="/predict" method="post">
             <div class="form-container">
-                Hours Studied: <input type="text" name="hours" placeholder="Enter hours studied"><br>
-                Previous Scores: <input type="text" name="previous_scores" placeholder="Enter previous scores"><br>
-                Extracurricular Activities (Yes/No): <input type="text" name="extracurricular_activities" placeholder="Yes or No"><br>
-                Sleep Hours: <input type="text" name="sleep" placeholder="Enter sleep hours"><br>
-                Sample Question Papers Practiced: <input type="text" name="sample_question_papers" placeholder="Enter no. of papers"><br>
-                <input type="submit" value="Predict">
+                <label>Hours Studied:</label>
+                <input type="text" name="hours" placeholder="Enter hours studied" required /><br>
+
+                <label>Previous Scores:</label>
+                <input type="text" name="previous_scores" placeholder="Enter previous scores" required /><br>
+
+                <label>Extracurricular Activities (Yes/No):</label>
+                <input type="text" name="extracurricular_activities" placeholder="Yes or No" required /><br>
+
+                <label>Sleep Hours:</label>
+                <input type="text" name="sleep" placeholder="Enter sleep hours" required /><br>
+
+                <label>Sample Question Papers Practiced:</label>
+                <input type="text" name="sample_question_papers" placeholder="Enter no. of papers" required /><br>
+
+                <input type="submit" value="Predict" />
             </div>
         </form>
-        <h2>{{ prediction_text }}</h2>
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
     </div>
 </body>
 </html>
