@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <div class="home-box">
+            <h1>Student Performance Predictor</h1>
+            <p>Click below to get started</p>
+            <a href="{{ url_for('index') }}">
+                <button class="predict-btn">Start Prediction</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

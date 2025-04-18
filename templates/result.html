@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <h2>{{ prediction_text }}</h2>
+        <img class="result-plot" src="data:image/png;base64,{{ plot_url }}" alt="Feature Contributions">
+        <a href="{{ url_for('home') }}">
+            <button class="predict-btn">New Prediction</button>
+        </a>
+    </div>
+</body>
+</html>
+
